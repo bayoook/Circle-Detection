@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/Custom-Upload-File.css">
+    <link rel="stylesheet" href="assets/css/File-Input---Beautiful-Input--Button-Approach-Jasny-Bootstrap.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background-color: rgb(247,252,255);background-image: url(&quot;assets/img/star-sky.jpg&quot;);">
+    <div class="login-dark" style="">
+        <form method="post" enctype=multipart/form-data>
+            <h1 class="text-center">Circle Detection</h1>
+            <div class="form-group d-xl-flex justify-content-xl-center" style="margin-top: 0px;">
+                <div style="width: 200px;">
+                    <input type="file" name="file" id="user_group_logo" class="custom-file-input" accept="image/*" name="user_group_logo">
+                    <div class="text-center">
+                        <label id="user_group_label" for="user_group_logo" style="color: #d2d2d2;">
+                            <i class="fas fa-upload" style="color: #d2d2d2;">
+                            </i>&nbsp;Choose an image...
+                        </label>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn btn-primary btn-block" type="submit">Upload</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Custom-Upload-File.js"></script>
+    <script src="assets/js/File-Input---Beautiful-Input--Button-Approach-Jasny-Bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script>
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+    if(getUrlParameter('filename') != ''){
+        Swal.fire({
+            title: getUrlParameter('filename'),
+            text: 'Circle detection with hough transform',
+            imageUrl: 'assets/circle/' + getUrlParameter('filename'),
+            showCancelButton: false,
+            showConfirmButton: false
+        })
+    } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+#bot {
+  z-index: -99;
+  position: absolute;
+  bottom: 0;
+  transform: skewY(-5deg);
+  right: 0;
+  left: 0;
+}
+
+#imgbox 
+{
+    vertical-align : middle;
+    position : absolute;
+    border: 1px solid #999;
+    background : #FFFFFF; 
+    filter: Alpha(Opacity=100);
+    visibility : hidden;
+    height : 200px;
+    width : 200px;
+    z-index : 50;
+    overflow : hidden;
+    text-align : center;
+}
